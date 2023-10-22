@@ -253,7 +253,6 @@ func (j *Job) Run(complianceClient complianceClient.ComplianceServiceClient,
 			return err
 		}
 	}
-	logger.Info("Set steampipe context config", zap.String("account_id", accountId), zap.String("resource_collection_filters", *encodedResourceCollectionFilter))
 
 	findings, err := j.RunBenchmark(logger, esk, j.BenchmarkID, nil, complianceClient, steampipeConn, connector)
 	if err != nil {

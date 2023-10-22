@@ -194,7 +194,6 @@ func (j Job) Do(esConfig config.ElasticSearch,
 			return
 		}
 	}
-	logger.Info("Set steampipe context config", zap.String("account_id", steampipeSourceId), zap.String("resource_collection_filters", *encodedResourceCollectionFilter))
 
 	logger.Info("running insight query", zap.Uint("insightId", j.InsightID), zap.String("connectionId", j.SourceID), zap.String("query", j.Query))
 

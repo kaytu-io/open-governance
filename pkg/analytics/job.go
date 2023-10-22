@@ -119,7 +119,6 @@ func (j *Job) Do(
 			return fail(err)
 		}
 	}
-	logger.Info("Set steampipe context config", zap.String("account_id", "all"), zap.String("resource_collection_filters", *encodedResourceCollectionFilter))
 
 	if err := j.Run(db, steampipeConn, kfkProducer, kfkTopic, schedulerClient, onboardClient, logger); err != nil {
 		fail(err)
